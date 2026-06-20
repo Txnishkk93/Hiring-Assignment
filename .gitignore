@@ -1,0 +1,6 @@
+.cursor/
+.env.example
+**/.env.example
+
+# Ignore IDE/editor state
+.vscode/
