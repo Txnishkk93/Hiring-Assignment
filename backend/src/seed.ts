@@ -217,7 +217,6 @@ async function seed() {
       status: 'now_showing',
     },
   ]);
-        formats: ['2D', '3D'],
   const theatres = await Theatre.insertMany([
     {
       name: 'PVR Phoenix',
