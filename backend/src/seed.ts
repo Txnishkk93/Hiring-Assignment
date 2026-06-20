@@ -102,7 +102,7 @@ async function seed() {
       posterUrl: 'https://image.tmdb.org/t/p/w500/qJ2tW6WMUDux911r6m7haRef0WH.jpg',
       bannerUrl: 'https://image.tmdb.org/t/p/original/qJ2tW6WMUDux911r6m7haRef0WH.jpg',
       genres: ['Action', 'Crime', 'Drama'],
-      formats: ['2D', 'IMAX'],
+      formats: ['2D', '3D'],
       cast: [
         { name: 'Christian Bale', role: 'Batman' },
         { name: 'Heath Ledger', role: 'The Joker' },
