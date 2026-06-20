@@ -49,7 +49,7 @@ export default function ShowtimeSelectTheatre() {
     <AppShell>
       <ScreenHeader title="Book" rightAction={{ label: 'Cancel', onClick: () => navigate('/') }} />
 
-      <div className="flex items-center gap-3 border-b border-border px-4 py-3">
+      <div className="flex items-center gap-3 border-b border-border px-4 md:px-8 py-3">
         <img src={movie.posterUrl} alt={movie.title} className="h-14 w-10 rounded object-cover" />
         <div>
           <p className="text-sm font-semibold text-text-primary">{movie.title}</p>
@@ -57,7 +57,7 @@ export default function ShowtimeSelectTheatre() {
         </div>
       </div>
 
-      <div className="px-4 py-4">
+      <div className="px-4 md:px-8 py-4">
         <input
           value={search}
           onChange={(e) => setSearch(e.target.value)}
@@ -65,7 +65,7 @@ export default function ShowtimeSelectTheatre() {
           className="mb-4 w-full rounded-lg border border-border-input px-3 py-2.5 text-sm outline-none focus:border-primary"
         />
 
-        <div className="space-y-3">
+        <div className="space-y-3 md:grid md:grid-cols-2 md:gap-4 md:space-y-0">
           {filteredTheatres.map((theatre) => (
             <TheatreListItem
               key={theatre._id}
@@ -77,12 +77,12 @@ export default function ShowtimeSelectTheatre() {
         </div>
       </div>
 
-      <div className="sticky bottom-0 border-t border-border bg-background px-4 py-3">
+      <div className="sticky bottom-0 md:relative md:bottom-auto border-t md:border-0 border-border bg-background md:bg-transparent px-4 py-3 md:px-8 md:py-4 md:mt-4">
         <button
           type="button"
           disabled={!selectedTheatre}
           onClick={() => navigate(`/movies/${id}/schedule`)}
-          className="w-full rounded-lg bg-primary py-3 text-base font-semibold text-white disabled:opacity-50"
+          className="w-full rounded-lg bg-primary py-3 text-base font-semibold text-white disabled:opacity-50 hover:bg-primary-hover transition cursor-pointer"
         >
           Continue
         </button>

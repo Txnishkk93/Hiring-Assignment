@@ -15,7 +15,7 @@ export default function Home() {
 
   return (
     <AppShell showBottomNav bottomNav={<BottomNav />}>
-      <div className="px-4 pt-4">
+      <div className="px-4 md:px-8 pt-4">
         <div className="mb-4 flex items-center gap-2 rounded-lg border border-border bg-surface px-3 py-2.5">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#9CA3AF" strokeWidth="2">
             <circle cx="11" cy="11" r="7" />
@@ -26,11 +26,11 @@ export default function Home() {
 
         {heroMovie && (
           <div className="relative mb-6 overflow-hidden rounded-xl">
-            <img src={heroMovie.bannerUrl} alt={heroMovie.title} className="h-44 w-full object-cover" />
-            <div className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-            <div className="absolute bottom-4 left-4 right-4">
-              <h2 className="text-lg font-semibold text-white">{heroMovie.title}</h2>
-              <p className="text-xs text-white/80">{heroMovie.genres.join(' · ')}</p>
+            <img src={heroMovie.bannerUrl} alt={heroMovie.title} className="h-44 md:h-80 w-full object-cover" />
+            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+            <div className="absolute bottom-4 left-4 right-4 md:bottom-8 md:left-8 md:right-8">
+              <h2 className="text-lg md:text-3xl font-semibold text-white">{heroMovie.title}</h2>
+              <p className="text-xs md:text-sm text-white/80 mt-1">{heroMovie.genres.join(' · ')}</p>
             </div>
           </div>
         )}
@@ -57,7 +57,7 @@ export default function Home() {
           <ErrorState message="Failed to load movies" onRetry={moviesQuery.refetch} />
         )}
         {moviesQuery.data && (
-          <div className="mb-8 flex gap-3 overflow-x-auto pb-2">
+          <div className="mb-8 flex gap-3 overflow-x-auto pb-2 md:grid md:grid-cols-4 lg:grid-cols-5 md:gap-6 md:overflow-visible">
             {moviesQuery.data.map((movie) => (
               <MovieCard key={movie._id} movie={movie} />
             ))}
@@ -73,7 +73,7 @@ export default function Home() {
           <ErrorState message="Failed to load theatres" onRetry={theatresQuery.refetch} />
         )}
         {theatresQuery.data && (
-          <div className="space-y-3 pb-4">
+          <div className="space-y-3 pb-4 md:grid md:grid-cols-2 md:gap-4 md:space-y-0">
             {theatresQuery.data.map((theatre) => (
               <TheatreListItem key={theatre._id} theatre={theatre} />
             ))}

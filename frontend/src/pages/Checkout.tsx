@@ -68,25 +68,30 @@ function CheckoutContent() {
     <AppShell>
       <ScreenHeader title="Checkout" rightAction={{ label: 'Cancel', onClick: () => navigate('/') }} />
 
-      <div className="mx-4 mt-4 rounded-lg border border-border p-4 text-sm">
-        <div className="flex justify-between py-1">
-          <span className="text-text-secondary">{selectedSeats.length} Tickets</span>
-          <span>{formatCurrency(subtotal)}</span>
+      <div className="md:grid md:grid-cols-5 md:gap-8 md:p-8 flex flex-col flex-1">
+        {/* Left column: Card Payment Form (takes 3 cols) */}
+        <div className="px-4 py-4 md:px-0 md:py-0 md:col-span-3">
+          <p className="mb-3 text-sm md:text-base font-semibold text-text-primary">Credit/Debit Card</p>
+          {error && <p className="mb-3 text-sm text-error">{error}</p>}
+          <CardForm onSubmit={handlePayment} loading={loading} />
         </div>
-        <div className="flex justify-between py-1">
-          <span className="text-text-secondary">Booking Fee</span>
-          <span>{formatCurrency(bookingFee)}</span>
-        </div>
-        <div className="mt-2 flex justify-between border-t border-border pt-2 font-semibold">
-          <span>Total</span>
-          <span className="text-primary">{formatCurrency(total)}</span>
-        </div>
-      </div>
 
-      <div className="px-4 py-4">
-        <p className="mb-3 text-sm font-semibold text-text-primary">Credit/Debit Card</p>
-        {error && <p className="mb-3 text-sm text-error">{error}</p>}
-        <CardForm onSubmit={handlePayment} loading={loading} />
+        {/* Right column: Order Summary details (takes 2 cols) */}
+        <div className="mx-4 mt-4 md:mx-0 md:mt-0 md:col-span-2 rounded-lg border border-border p-4 bg-surface text-sm md:text-base h-fit">
+          <p className="mb-3 font-semibold text-text-primary border-b border-border pb-2">Order Summary</p>
+          <div className="flex justify-between py-1.5">
+            <span className="text-text-secondary">{selectedSeats.length} Tickets</span>
+            <span className="font-medium">{formatCurrency(subtotal)}</span>
+          </div>
+          <div className="flex justify-between py-1.5">
+            <span className="text-text-secondary">Booking Fee</span>
+            <span className="font-medium">{formatCurrency(bookingFee)}</span>
+          </div>
+          <div className="mt-2 flex justify-between border-t border-border pt-2 font-semibold text-base md:text-lg">
+            <span>Total</span>
+            <span className="text-primary">{formatCurrency(total)}</span>
+          </div>
+        </div>
       </div>
     </AppShell>
   );

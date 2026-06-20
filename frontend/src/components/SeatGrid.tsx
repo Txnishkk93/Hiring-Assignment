@@ -25,7 +25,7 @@ export function SeatGrid({ seats, selectedSeats, onToggleSeat }: SeatGridProps) 
   }, [seats]);
 
   return (
-    <div className="px-4">
+    <div className="px-4 max-w-lg mx-auto">
       {/* Curved screen indicator */}
       <div className="mb-6 flex flex-col items-center">
         <svg width="280" height="32" viewBox="0 0 280 32" fill="none" aria-hidden>

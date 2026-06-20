@@ -56,7 +56,7 @@ export default function ShowtimeSelect() {
     <AppShell>
       <ScreenHeader title="Book" rightAction={{ label: 'Cancel', onClick: () => navigate('/') }} />
 
-      <div className="flex items-center gap-3 border-b border-border px-4 py-3">
+      <div className="flex items-center gap-3 border-b border-border px-4 md:px-8 py-3">
         <img
           src={movieQuery.data?.posterUrl}
           alt={movieQuery.data?.title}
@@ -68,7 +68,7 @@ export default function ShowtimeSelect() {
         </div>
       </div>
 
-      <div className="py-4">
+      <div className="py-4 md:py-6">
         <DateStrip
           dates={dates}
           selectedDate={activeDate}
@@ -78,7 +78,7 @@ export default function ShowtimeSelect() {
 
       {showtimesQuery.isError && <ErrorState message="Failed to load showtimes" onRetry={showtimesQuery.refetch} />}
 
-      <div className="space-y-4 px-4 pb-24">
+      <div className="space-y-4 px-4 md:px-8 pb-24 md:pb-8">
         {theatreShowtimes.length === 0 && !showtimesQuery.isLoading && (
           <p className="py-8 text-center text-sm text-text-secondary">No showtimes for this date</p>
         )}
@@ -90,10 +90,10 @@ export default function ShowtimeSelect() {
                 key={showtime._id}
                 type="button"
                 onClick={() => dispatch(setSelectedShowtime(showtime))}
-                className={`rounded-lg border px-4 py-2 text-sm font-medium ${
+                className={`rounded-lg border px-4 py-2 text-sm font-medium transition cursor-pointer ${
                   selectedShowtime?._id === showtime._id
                     ? 'border-primary bg-primary text-white'
-                    : 'border-border bg-background text-text-primary'
+                    : 'border-border bg-background text-text-primary hover:border-primary hover:bg-primary/5'
                 }`}
               >
                 {formatTime(showtime.time)} · {showtime.format}
@@ -103,12 +103,12 @@ export default function ShowtimeSelect() {
         </div>
       </div>
 
-      <div className="sticky bottom-0 border-t border-border bg-background px-4 py-3">
+      <div className="sticky bottom-0 md:relative md:bottom-auto border-t md:border-0 border-border bg-background md:bg-transparent px-4 py-3 md:px-8 md:py-4">
         <button
           type="button"
           disabled={!selectedShowtime}
           onClick={() => navigate(`/showtimes/${selectedShowtime?._id}/seats`)}
-          className="w-full rounded-lg bg-primary py-3 text-base font-semibold text-white disabled:opacity-50"
+          className="w-full rounded-lg bg-primary py-3 text-base font-semibold text-white disabled:opacity-50 hover:bg-primary-hover transition cursor-pointer"
         >
           Get Tickets
         </button>

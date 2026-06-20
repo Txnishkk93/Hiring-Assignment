@@ -25,7 +25,7 @@ export default function PaymentSuccess() {
     <AppShell>
       <ScreenHeader title="Payment Successful" rightAction={{ label: 'Close', onClick: () => navigate('/') }} />
 
-      <div className="flex flex-col items-center px-4 py-6">
+      <div className="flex flex-col items-center px-4 py-6 max-w-md mx-auto w-full">
         <div className="mb-4 flex h-16 w-16 items-center justify-center rounded-full bg-success text-white">
           <svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="3">
             <path d="M5 13l4 4L19 7" />

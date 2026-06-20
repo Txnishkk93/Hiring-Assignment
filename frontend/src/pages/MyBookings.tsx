@@ -55,9 +55,9 @@ function MyBookingsContent() {
       {isLoading && <LoadingState />}
       {isError && <ErrorState message="Failed to load bookings" onRetry={refetch} />}
 
-      <div className="space-y-4 p-4">
+      <div className="space-y-4 p-4 md:p-8 md:grid md:grid-cols-2 md:gap-6 md:space-y-0">
         {!isLoading && filtered.length === 0 && (
-          <p className="py-8 text-center text-sm text-text-secondary">No bookings yet</p>
+          <p className="py-8 text-center text-sm text-text-secondary md:col-span-2">No bookings yet</p>
         )}
         {filtered.map((booking) => (
           <TicketCard

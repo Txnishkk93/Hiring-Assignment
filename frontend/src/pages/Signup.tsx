@@ -39,7 +39,7 @@ export default function Signup() {
 
   return (
     <AppShell>
-      <div className="flex flex-col items-center px-4 pt-10">
+      <div className="flex flex-col items-center px-4 pt-10 max-w-md mx-auto w-full">
         <div className="mb-8 flex flex-col items-center">
           <div className="mb-2 flex h-12 w-12 items-center justify-center rounded-xl bg-primary text-xl text-white">
             🎬

@@ -44,7 +44,7 @@ const navItems = [
 
 export function BottomNav() {
   return (
-    <nav className="fixed bottom-0 z-30 flex h-16 w-full max-w-[390px] items-center justify-around border-t border-border bg-background">
+    <nav className="fixed bottom-0 z-30 flex h-16 w-full max-w-[390px] items-center justify-around border-t border-border bg-background md:hidden">
       {navItems.map((item) => (
         <NavLink
           key={item.label}

@@ -29,7 +29,7 @@ export function PriceSummaryBar({
         type="button"
         disabled={disabled || seatCount === 0}
         onClick={onContinue}
-        className="w-full rounded-lg bg-primary py-3 text-base font-semibold text-white disabled:opacity-50"
+        className="w-full rounded-lg bg-primary py-3 text-base font-semibold text-white disabled:opacity-50 hover:bg-primary-hover transition cursor-pointer"
       >
         {buttonLabel}
       </button>
