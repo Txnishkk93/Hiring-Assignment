@@ -207,7 +207,7 @@ async function seed() {
       posterUrl: 'https://image.tmdb.org/t/p/w500/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
       bannerUrl: 'https://image.tmdb.org/t/p/original/gEU2QniE6E77NI6lCU6MxlNBvIx.jpg',
       genres: ['Adventure', 'Drama', 'Sci-Fi'],
-      formats: ['2D', '3D', 'IMAX'],
+      formats: ['2D', '3D'],
       cast: [
         { name: 'Matthew McConaughey', role: 'Cooper' },
         { name: 'Anne Hathaway', role: 'Brand' },
@@ -217,7 +217,7 @@ async function seed() {
       status: 'now_showing',
     },
   ]);
-
+        formats: ['2D', '3D'],
   const theatres = await Theatre.insertMany([
     {
       name: 'PVR Phoenix',
