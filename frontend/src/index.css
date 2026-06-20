@@ -1,0 +1,56 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import 'tailwindcss';
+
+@theme {
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+
+  --color-primary: #5d5fef;
+  --color-primary-hover: #4b4dd4;
+  --color-background: #ffffff;
+  --color-surface: #f8f8fa;
+  --color-surface-muted: #f3f4f6;
+  --color-border: #e8e8ed;
+  --color-border-input: #d1d5db;
+  --color-text-primary: #121212;
+  --color-text-secondary: #6b7280;
+  --color-text-muted: #9ca3af;
+  --color-seat-available: #ffffff;
+  --color-seat-occupied: #c4c4c4;
+  --color-seat-selected: #5d5fef;
+  --color-success: #22c55e;
+  --color-success-bg: #ecfdf5;
+  --color-error: #ef4444;
+  --color-error-bg: #fef2f2;
+  --color-screen-arc: #d1d5db;
+}
+
+:root {
+  --color-screen-arc: #d1d5db;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-surface-muted);
+  color: var(--color-text-primary);
+  -webkit-font-smoothing: antialiased;
+}
+
+.scrollbar-hide::-webkit-scrollbar {
+  display: none;
+}
+
+.scrollbar-hide {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
